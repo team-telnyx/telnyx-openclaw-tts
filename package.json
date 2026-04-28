@@ -1,7 +1,7 @@
 {
   "name": "openclaw-telnyx-tts",
   "version": "1.0.0",
-  "description": "Telnyx TTS speech provider for OpenClaw — 10x cheaper than ElevenLabs, zero-config with TELNYX_API_KEY",
+  "description": "Telnyx TTS speech provider for OpenClaw \u2014 10x cheaper than ElevenLabs, zero-config with TELNYX_API_KEY",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -52,5 +52,8 @@
   },
   "dependencies": {
     "ws": "^8.20.0"
+  },
+  "engines": {
+    "node": ">=22.14.0"
   }
 }
