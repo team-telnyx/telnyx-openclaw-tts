@@ -61,6 +61,11 @@ describe("isValidTelnyxVoice", () => {
   it("rejects AWS.Polly voices (non-Telnyx)", () => {
     expect(isValidTelnyxVoice("AWS.Polly.Joanna-Neural")).toBe(false);
   });
+
+  it("accepts LibriTTS voices", () => {
+    expect(isValidTelnyxVoice("Telnyx.LibriTTS.0")).toBe(true);
+    expect(isValidTelnyxVoice("Telnyx.LibriTTS.1")).toBe(true);
+  });
 });
 
 // ─── Base URL normalization ──────────────────────────────────────────

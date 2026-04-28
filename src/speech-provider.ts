@@ -128,7 +128,7 @@ const KNOWN_VOICE_PREFIXES = [
   "telnyx.kokorotts.",
   "telnyx.ultra.",
   "telnyx.qwen3tts.",
-  "telnyx.librits.",
+  "telnyx.libritts.",
 ];
 
 /** Check if a string looks like a valid Telnyx voice ID. */
@@ -174,10 +174,9 @@ function resolveTelnyxApiKey(
 
   // 2. Global provider config from openclaw.json
   if (cfg) {
-    const globalKey = asString(
-      asObject(asObject(cfg.models)?.providers)?.telnyx &&
-      asString((asObject(asObject(cfg.models)?.providers)?.telnyx as any)?.apiKey)
-    );
+    const providers = asObject(asObject(cfg.models)?.providers);
+    const telnyxProvider = asObject(providers?.telnyx);
+    const globalKey = asString(telnyxProvider?.apiKey);
     if (globalKey) return globalKey;
   }
 

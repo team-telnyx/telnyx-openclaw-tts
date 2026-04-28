@@ -45,12 +45,15 @@ export const TELNYX_TTS_VOICE_FAMILIES = [
 /**
  * Default/popular voices for quick reference.
  *
- * Note: Telnyx.Natural.* voices do NOT work via the WebSocket TTS API
- * (they return isFinal immediately with no audio). They're legacy
- * Call-Control-only voices. Only NaturalHD and KokoroTTS families
- * are confirmed working with the WebSocket endpoint.
+ * Confirmed working via WebSocket TTS:
+ * - NaturalHD — premium voices, refined prosody
+ * - KokoroTTS — budget-friendly, fast synthesis
+ * - Natural — standard voices (most work, some may vary)
+ * - LibriTTS — small but functional audio output
  *
- * Ultra and Qwen3TTS may require specific plan tiers (403 without).
+ * Partial/restricted:
+ * - Ultra — may require specific plan tiers (403 without access)
+ * - Qwen3TTS — voice-dependent (some return audio, others don't)
  */
 export const TELNYX_TTS_DEFAULT_VOICES = [
   // NaturalHD — premium, refined prosody (confirmed working)
@@ -115,7 +118,7 @@ export async function telnyxTts(params: TelnyxTtsParams): Promise<Buffer> {
     const timer = setTimeout(() => {
       if (!settled) {
         settled = true;
-        try { ws.close(); } catch {}
+        try { ws.close(1000); } catch {}
         reject(new Error(`Telnyx TTS: timeout after ${timeoutMs}ms`));
       }
     }, timeoutMs);
@@ -124,7 +127,7 @@ export async function telnyxTts(params: TelnyxTtsParams): Promise<Buffer> {
       if (settled) return;
       settled = true;
       clearTimeout(timer);
-      try { ws.close(); } catch {}
+      try { ws.close(1000); } catch {}
 
       if (error) {
         reject(error);
