@@ -1,0 +1,59 @@
+{
+  "name": "openclaw-telnyx-tts",
+  "version": "1.0.0",
+  "description": "Telnyx TTS speech provider for OpenClaw \u2014 10x cheaper than ElevenLabs, zero-config with TELNYX_API_KEY",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "openclaw": {
+    "extensions": [
+      "./dist/index.js"
+    ]
+  },
+  "files": [
+    "dist",
+    "openclaw.plugin.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "lint": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "openclaw",
+    "openclaw-plugin",
+    "telnyx",
+    "tts",
+    "text-to-speech",
+    "speech-provider"
+  ],
+  "author": "Ifthikar Razik <ifthikar@telnyx.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/team-telnyx/openclaw-telnyx-tts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/team-telnyx/openclaw-telnyx-tts/issues"
+  },
+  "homepage": "https://github.com/team-telnyx/openclaw-telnyx-tts#readme",
+  "peerDependencies": {
+    "openclaw": ">=2026.4.0"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.18.1",
+    "esbuild": "^0.25.0",
+    "typescript": "^5.8.0",
+    "vitest": "^3.1.0"
+  },
+  "dependencies": {
+    "ws": "^8.20.0"
+  },
+  "engines": {
+    "node": ">=22.14.0"
+  }
+}

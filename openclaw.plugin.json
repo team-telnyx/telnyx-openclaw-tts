@@ -1,0 +1,30 @@
+{
+  "id": "telnyx-tts",
+  "name": "Telnyx Text-to-Speech",
+  "description": "Use Telnyx as a speech provider for OpenClaw TTS. WebSocket-based, low-latency — just set TELNYX_API_KEY.",
+  "enabledByDefault": true,
+  "providers": ["telnyx"],
+  "providerAuthEnvVars": {
+    "telnyx": ["TELNYX_API_KEY"]
+  },
+  "providerAuthChoices": [
+    {
+      "provider": "telnyx",
+      "method": "api_key",
+      "choiceId": "telnyx",
+      "choiceLabel": "Telnyx",
+      "choiceHint": "Low-latency TTS via Telnyx AI (NaturalHD, KokoroTTS voices)",
+      "groupId": "telnyx",
+      "groupLabel": "Telnyx",
+      "groupHint": "Telnyx TTS — 10x cheaper than ElevenLabs, carrier-grade latency"
+    }
+  ],
+  "contracts": {
+    "speechProviders": ["telnyx"]
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}
