@@ -188,8 +188,8 @@ Get one at [portal.telnyx.com](https://portal.telnyx.com/#/app/api-keys).
 ## Development
 
 ```bash
-git clone https://github.com/team-telnyx/openclaw-telnyx-tts.git
-cd openclaw-telnyx-tts
+git clone https://github.com/team-telnyx/telnyx-openclaw-tts.git
+cd telnyx-openclaw-tts
 npm install
 npm run build
 ```

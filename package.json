@@ -8,13 +8,20 @@
   "openclaw": {
     "extensions": [
       "./dist/index.js"
-    ]
+    ],
+    "compat": {
+      "pluginApi": "2026.4"
+    },
+    "build": {
+      "openclawVersion": "2026.4.24"
+    }
   },
   "files": [
     "dist",
     "openclaw.plugin.json",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "SKILL.md"
   ],
   "scripts": {
     "build": "node scripts/build.mjs",
@@ -35,12 +42,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/team-telnyx/openclaw-telnyx-tts.git"
+    "url": "git+https://github.com/team-telnyx/telnyx-openclaw-tts.git"
   },
   "bugs": {
-    "url": "https://github.com/team-telnyx/openclaw-telnyx-tts/issues"
+    "url": "https://github.com/team-telnyx/telnyx-openclaw-tts/issues"
   },
-  "homepage": "https://github.com/team-telnyx/openclaw-telnyx-tts#readme",
+  "homepage": "https://github.com/team-telnyx/telnyx-openclaw-tts#readme",
   "peerDependencies": {
     "openclaw": ">=2026.4.0"
   },
