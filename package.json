@@ -1,5 +1,5 @@
 {
-  "name": "openclaw-telnyx-tts",
+  "name": "telnyx-openclaw-tts",
   "version": "1.0.0",
   "description": "Telnyx TTS speech provider for OpenClaw \u2014 10x cheaper than ElevenLabs, zero-config with TELNYX_API_KEY",
   "type": "module",
