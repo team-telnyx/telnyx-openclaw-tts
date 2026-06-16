@@ -4,6 +4,21 @@
 
 Use [Telnyx AI](https://telnyx.com/products/voice-ai-agents) as your OpenClaw text-to-speech backend. Every `/tts` command, voice note, and ClawdTalk voice call will use Telnyx TTS — premium NaturalHD voices at a fraction of ElevenLabs' cost.
 
+## Video walkthrough
+
+Click the preview to play the setup and verification demo in GitHub:
+
+[![OpenClaw TTS setup and verification demo](docs/demo/openclaw-tts-setup-verification-demo.png)](docs/demo/openclaw-tts-setup-verification-demo.mp4)
+
+The video shows the end-to-end flow:
+
+- set `TELNYX_API_KEY`
+- open the plugin project, install dependencies, build, test, and package it
+- install and inspect `telnyx-tts` in OpenClaw
+- select Telnyx as the active TTS provider
+- convert text to an MP3 and verify the generated speech file
+- play the generated speech output
+
 ## Why Telnyx TTS?
 
 | Feature | Telnyx | ElevenLabs |
@@ -55,6 +70,8 @@ openclaw gateway restart
 ```
 
 That's it. TTS will automatically detect and use Telnyx when `TELNYX_API_KEY` is set.
+
+If another TTS provider is explicitly configured, use the configuration below to force Telnyx.
 
 ## How It Works
 
